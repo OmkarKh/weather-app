@@ -24,7 +24,13 @@ function App() {
       <h1>Weatherly</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          <input type="text" onChange={(e) => setQuery(e.target.value)} value={query} placeholder='Enter city' required />
+          <input
+            type="text"
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            placeholder='Enter city'
+            spellcheck='false'
+            required />
         </label>
         <button type='submit'>Submit</button>
       </form>
