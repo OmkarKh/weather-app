@@ -2,15 +2,16 @@ import { useState } from 'react'
 import axios from 'axios'
 import './App.css';
 
+
 function App() {
   const [query, setQuery] = useState('')
   const [condition, setCondition] = useState([])
+  const weather_key = process.env.REACT_APP_WEATHER_KEY
 
-  const url = `http://api.weatherstack.com/current?access_key=a7e00b216bd19a4707e9cd88b630d64f&query=${query}`
+  const url = `http://api.weatherstack.com/current?access_key=${weather_key}&query=${query}`
   const getData = async () => {
     const response = await axios.get(url)
     setCondition([response.data]) //response.data is an object
-    console.log(response.data)
   }
 
   const handleSubmit = (e) => {
